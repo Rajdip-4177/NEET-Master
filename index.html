@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Test Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Homepage -->
+        <div id="homepage">
+            <h1 class="header">NEET Test Platform</h1>
+            <div class="subjects">
+                <button class="subject-btn" onclick="showChapters('Biology')">Biology</button>
+                <button class="subject-btn" onclick="showChapters('Physics')">Physics</button>
+                <button class="subject-btn" onclick="showChapters('Chemistry')">Chemistry</button>
+            </div>
+            <div id="chaptersContainer" class="chapter-list"></div>
+        </div>
+
+        <!-- Test Page -->
+        <div id="testPage" class="test-section" style="display: none;">
+            <div class="test-container">
+                <div class="navigation-sidebar">
+                    <div class="timer-box">
+                        <div class="timer-text" id="time">04:00:00</div>
+                        <div>Time Remaining</div>
+                    </div>
+                    <h4>Question Navigation</h4>
+                    <div class="question-grid" id="navigationGrid"></div>
+                </div>
+                
+                <div class="question-panel">
+                    <h2 id="testTitle"></h2>
+                    <div id="questionsContainer"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="resultsPage" class="results-section" style="display: none;">
+            <h2 class="header">Test Results</h2>
+            <div id="scoreSummary" class="score-summary"></div>
+            <div id="detailedResults" class="detailed-results"></div>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+            <div class="results-controls">
+                <button class="action-btn btn-primary" onclick="restartTest()">Restart Test</button>
+                <button class="action-btn btn-tertiary" onclick="goHome()">Go to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
